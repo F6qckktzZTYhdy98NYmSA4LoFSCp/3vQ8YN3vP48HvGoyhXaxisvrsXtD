@@ -1,0 +1,115 @@
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(20px);
+  }
+  75% {
+    transform: translateY(20px) translateX(10px);
+  }
+}
+
+@keyframes move {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, 50px);
+  }
+  50% {
+    transform: translate(100px, 0);
+  }
+  75% {
+    transform: translate(50px, -50px);
+  }
+}
+
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1000%);
+    opacity: 0;
+  }
+}
+
+@keyframes firefly {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(var(--x, 20px), var(--y, 20px));
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(20px) scaleY(0.5);
+  }
+}
+
+@keyframes colorfulFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(60px, 0) scale(1);
+  }
+  75% {
+    transform: translate(30px, 30px) scale(0.9);
+  }
+}
+
+.fireflies > div {
+  --x: 0px;
+  --y: 0px;
+}
+
+.fireflies > div:nth-child(3n) {
+  --x: -20px;
+  --y: 30px;
+}
+
+.fireflies > div:nth-child(3n + 1) {
+  --x: 30px;
+  --y: -20px;
+}
+
+.fireflies > div:nth-child(3n + 2) {
+  --x: -30px;
+  --y: -30px;
+}
+
+.matrix-rain {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1;
+}

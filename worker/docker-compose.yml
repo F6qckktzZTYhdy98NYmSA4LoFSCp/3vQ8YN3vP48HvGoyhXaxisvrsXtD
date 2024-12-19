@@ -1,0 +1,16 @@
+version: '3'
+services:
+  zybertrainworker:
+    build:
+      context: .
+      no_cache: true
+    ports:
+      - "8787:8787"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    restart: no
+    container_name: zybertrain-worker
+    image: zybertrain-worker:latest

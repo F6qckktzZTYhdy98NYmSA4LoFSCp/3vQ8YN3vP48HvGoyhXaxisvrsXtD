@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  portal:
+    build:
+      context: ./portal
+      dockerfile: Dockerfile
+    ports:
+      - "3492:3492"
+    volumes:
+      - ./portal/src:/app/src
+      - ./portal/public:/app/public
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    restart: no
+    container_name: zybertrain-portal
+    image: zybertrain-portal:latest
+
+  worker:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./worker:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    env_file:
+      - .env
+    restart: no
+    container_name: zybertrain-worker
+    image: zybertrain-worker:latest
+

@@ -1,0 +1,35 @@
+# Version control
+.git
+.gitignore
+
+# Dependencies
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build outputs
+dist
+build
+.wrangler
+
+# Environment files
+.env
+.env.*
+
+# Development files
+*.md
+*.log
+.vscode
+.idea
+*.test.ts
+*.spec.ts
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Cloudflare Wrangler local files
+.dev.vars
+.wrangler

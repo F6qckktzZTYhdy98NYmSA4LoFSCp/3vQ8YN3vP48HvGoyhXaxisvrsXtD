@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  zybertrainportal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      no_cache: true
+    ports:
+      - "3492:3492"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    restart: no
+    container_name: zybertrain-portal
+    image: zybertrain-portal:latest
+
